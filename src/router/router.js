@@ -5,6 +5,10 @@ import JatakForm from "@/jatak/components/JatakForm.vue";
 
 const routes = [
     {
+        path: '/',
+        redirect: '/dashboard',
+    },
+    {
         path: '/dashboard',
         name: 'dashboard',
         component: dashboard,
@@ -19,7 +23,7 @@ const routes = [
         path: '/ja-tak',
         name: 'ja-tak',
         component: () => import("@/jatak/components/JatakLayout.vue"),
-
+        meta: { requiresAuth: true },
         children: [
             {
                 path: 'create',
@@ -37,13 +41,26 @@ const router = createRouter({
 
 
 router.beforeEach((to, from, next) => {
-    const isLoggedIn = !!localStorage.getItem('auth_token') // your auth check
+    const token = localStorage.getItem('auth_token')
 
-    if (to.meta.requiresAuth && !isLoggedIn) {
-        next({ name: 'login' }) // redirect if not logged in
-    } else {
-        next() // proceed if logged in or route doesn't require auth
+    const isLoggedIn =
+        token && token !== 'null' && token !== 'undefined'
+
+    const needsAuth = to.matched.some(r => r.meta.requiresAuth)
+
+    // 🚫 If already logged in and trying to go to login → redirect
+    if (to.name === 'login' && isLoggedIn) {
+        next({ name: 'dashboard' })
+        return
     }
+
+    // 🔒 If route needs auth and user isn't logged in → redirect to login
+    if (needsAuth && !isLoggedIn) {
+        next({ name: 'login' })
+        return
+    }
+
+    next()
 })
 
 export default router

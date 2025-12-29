@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .login-btn {
     transition: .3s all ease-in-out;
     font-size: 16px;
@@ -17,4 +23,122 @@
 .btn-black-login {
     background-color: #1c1c1c;
     color: #fff;
+}
+
+.app-page {
+    position: relative;
+    padding-bottom: 70px;
+    z-index: 20;
+    min-height: 100%;
+}
+
+.app-page .fixed-header,
+.app-page .fixed-header-bug-fix {
+    z-index: 5;
+    width: 100%;
+    background: #FFFFFF;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -webkit-overflow-scrolling: touch;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+.app-page .fixed-header-content {
+    position: relative;
+    max-width: 768px;
+    margin: auto;
+}
+
+@media (min-width: 1025px) {
+    .app-page .fixed-header .fixed-header-content,
+    .app-page .fixed-header-bug-fix .fixed-header-content {
+        max-width: 768px;
+        margin: auto;
+    }
+}
+
+.tab-container .channel-selection-box {
+    z-index: 102;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+}
+
+.tab-container .channel-selection-btn {
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+    font-size: 12px;
+    line-height: 16.74px;
+    letter-spacing: 0.12px;
+    color: #1c1c1c;
+}
+
+.tab-container .channel-selection-btn span,
+.tab-container .channel-selection-btn i {
+    vertical-align: middle;
+    color: #1c1c1c;
+    display: inline-block;
+}
+
+.tab-container .channel-selection-btn i {
+    position: relative;
+    top: 1px;
+    transition: ease-in-out 0.5s;
+}
+
+.tab-container .channel-selection-btn .show-channel-selection {
+    transform: rotate(180deg);
+    transition: ease-in-out 0.5s;
+}
+
+.tab-container .tab-list .tab-option {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1c1c1c;
+    line-height: 19.36px;
+    letter-spacing: -0.4px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tab-container .tab-list .tab-option .share-popup-btn {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+}
+
+.tab-container .tab-list .active {
+    display: inline-block;
+    float: left;
+    color: #000000;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tab-container .tab-list .inactive {
+    color: rgba(239, 239, 239, 0.3);
+}
+
+.tab-container .tab-list.error,
+.tab-container .tab-list.error li {
+    border-color: #ff4d4d; /* replace if needed */
+    color: #ff4d4d;
+}
+
+.flex-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tab-container-wrap {
+    padding: 20px 15px;
+    border-bottom: 1px solid #C5C5C7;
 }
