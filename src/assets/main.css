@@ -25,6 +25,12 @@
     color: #fff;
 }
 
+.btn-white-login {
+    background-color: #FFFFFF;
+    color: black;
+    border: 2px solid black;
+}
+
 .app-page {
     position: relative;
     padding-bottom: 70px;
