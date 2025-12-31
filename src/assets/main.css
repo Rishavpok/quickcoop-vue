@@ -148,3 +148,151 @@
     padding: 20px 15px;
     border-bottom: 1px solid #C5C5C7;
 }
+
+
+.page-container {
+    max-width: 768px;
+    margin: auto;
+}
+
+.section-wrapper {
+    margin: 32px 0;
+
+
+    .title {
+        font-size: 18px;
+        line-height: 21.78px;
+        letter-spacing: -0.02px;
+        color: #d10a11;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: -0.4px;
+        font-weight: 400;
+    }
+
+    .jatak-setting {
+        font-size: 12px;
+        line-height: 16.74px;
+        letter-spacing: 0.12px;
+        font-weight: 400;
+        text-decoration: underline;
+    }
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+
+    label {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 18px;
+        letter-spacing: -0.2px;
+        color: #1c1c1c;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=text],[type=password] {
+        transition: .3s all ease-in-out;
+        font-size: 16px;
+        appearance: none;
+        position: relative;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #c5c5c5;
+        border-radius: 4px;
+        outline: none;
+    }
+
+    .login-btn {
+        transition: .3s all ease-in-out;
+        font-size: 16px;
+        letter-spacing: -0.02px;
+        line-height: 19.26px;
+        border: 0;
+        width: 100%;
+        text-align: center;
+        padding: 11px 20px;
+        position: relative;
+        border-radius: 90px;
+        display: block;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+
+    .btn-black-login {
+        background-color: #1c1c1c;
+        color: #fff;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .col-two {
+        width: 49%;
+    }
+}
+
+
+.price-description-wrapper {
+    display: flex;
+    align-items: flex-start;
+    .form-group.error.label {
+        color: #f64b51;
+    }
+
+    .price-container {
+        display: flex;
+        align-items: flex-start;
+        flex-basis: 35%;
+
+        span.error-message {
+            text-align: start !important;
+        }
+
+        .form-group {
+            position: unset;
+            margin-bottom: 0 !important;
+
+        }
+
+
+    }
+
+    .price-description-container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-basis: 75%;
+
+        .price-description {
+            flex-basis: 55%;
+        }
+
+        span.error-message {
+            text-align: start !important
+        }
+
+        .form-group {
+            position: unset;
+            margin-bottom: 0 !important;
+        }
+    }
+
+    .price-limit {
+        position: relative;
+        background-color: #fff;
+        height: 100%;
+        flex-basis: 30%;
+    }
+}
